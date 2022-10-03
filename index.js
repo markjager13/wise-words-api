@@ -8,20 +8,11 @@ require('dotenv/config');
 const app = express();
 const PORT = process.env.PORT || 3000
 
-/*
-app.use(cors());
-app.options('*', cors());  // enable pre-flight
-*/
 
-app.use(
-    cors({
-      allowedHeaders: ["authorization", "Content-Type"], // you can change the headers
-      exposedHeaders: ["authorization"], // you can change the headers
-      origin: "*",
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      preflightContinue: false
-    })
-);
+app.use(cors({origin: true}));
+app.options("*", (req, res) => {
+    res.status(200).send("Preflight request allowed");
+  });
 
 /*
 // CORS
