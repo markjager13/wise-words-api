@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const quotesRoutes = require('./routes/quotes');
 require('dotenv/config');
@@ -8,13 +7,6 @@ require('dotenv/config');
 const app = express();
 const PORT = process.env.PORT || 3000
 
-
-app.use(cors({origin: true}));
-app.options("*", (req, res) => {
-    res.status(200).send("Preflight request allowed");
-  });
-
-/*
 // CORS
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -23,8 +15,6 @@ app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Credentials", "true");
     next();
 })
-*/
-
 
 
 // Data parsing
