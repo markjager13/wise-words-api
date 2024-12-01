@@ -5,8 +5,6 @@ I thought building a quotes app was a great way to practice my JavaScript fundam
 
 This repo is concerned with the backend API. To see the frontend, click [here](https://github.com/markjager13/wise-words-frontend).
 
-[Live Demo](https://wise-words-app.netlify.app/)
-
 ### How I worked on this project
 * I first built a simple server and set up some basic routes using node.js and express.
 * I then set up a MongoDB Atlas cluster and populated the DB with my quotes. 
